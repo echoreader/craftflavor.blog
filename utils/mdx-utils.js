@@ -97,3 +97,9 @@ export const getPreviousPostBySlug = (slug) => {
     slug: previousPostSlug,
   };
 };
+
+export const getAllSlugs = () => {
+  return getPostFilePaths().map((filePath) =>
+    filePath.replace(/\.mdx?$/, '')
+  );
+};
