@@ -17,7 +17,11 @@ export default function Index({ posts, globalData }) {
         <h1 className="mb-12 text-3xl text-center lg:text-5xl">
           {globalData.blogTitle}
         </h1>
-        Home
+        <p>Welcome! I’m Echo Reader, a passionate Blogger and the architect behind the Echo Reader Blog Network (echoreader.blog). I believe in the power of targeted, high-quality content to drive engagement and deliver real value.</p>
+
+<p>My Approach to Content:</p>
+
+<p>My digital footprint spans over ten distinct, actively-maintained niches. This segmented approach allows for maximum SEO impact, superior audience targeting, and specialized content creation. I don’t just write; I craft unique voices designed to inform, inspire, and build trust within each specific community.</p>
       </main>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
