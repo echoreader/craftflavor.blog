@@ -32,7 +32,7 @@ export default function About({ posts, globalData }) {
           </p>
 
           <p>
-            Whether you're here to learn, explore, or collaborate, Echo Reader is committed to creating content with purpose.
+            Whether you are here to learn, explore, or collaborate, Echo Reader is committed to creating content with purpose.
           </p>
         </section>
       </main>
