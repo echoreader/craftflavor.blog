@@ -15,45 +15,41 @@ export function GradientBackground({ variant, className }) {
 }
 
 export default function Layout({ children }) {
-  const setAppTheme = () => {
-    const darkMode = localStorage.getItem('theme') === 'dark';
-    const lightMode = localStorage.getItem('theme') === 'light';
+  // === DARK MODE HANDLING ===
+  useEffect(() => {
+    const setAppTheme = () => {
+      const darkMode = localStorage.getItem('theme') === 'dark';
+      const lightMode = localStorage.getItem('theme') === 'light';
 
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else if (lightMode) {
-      document.documentElement.classList.remove('dark');
-    }
-    return;
-  };
-
-  const handleSystemThemeChange = () => {
-    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    darkQuery.onchange = (e) => {
-      if (e.matches) {
+      if (darkMode) {
         document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
+      } else if (lightMode) {
         document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
       }
     };
-  };
 
-  useEffect(() => {
+    const handleSystemThemeChange = () => {
+      const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      darkQuery.onchange = (e) => {
+        if (e.matches) {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        }
+      };
+    };
+
     setAppTheme();
-  }, []);
-
-  useEffect(() => {
     handleSystemThemeChange();
   }, []);
 
+  // === LAYOUT STRUCTURE ===
   return (
     <div className="relative pb-24 overflow-hidden">
-      <div className="flex flex-col items-center w-full max-w-2xl mx-auto">
-        {children}
-      </div>
+      {/* Header, Footer, Gradient, dan konten bebas lebar */}
+      {children}
     </div>
   );
 }

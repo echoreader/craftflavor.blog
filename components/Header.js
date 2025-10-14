@@ -2,22 +2,38 @@ import Link from 'next/link';
 
 export default function Header({ name }) {
   return (
-    <header className="flex items-center justify-between px-6 py-6">
-  {/* Kiri: Logo + Nama */}
-  <div className="flex items-center gap-4">
-    {/* D<div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-blue-400" /> */}
-    <Link href="/" className="text-2xl font-semibold dark:text-white">
-      Echo Reader
-    </Link>
-  </div>
+    <header className="bg-white border-b border-gray-200">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between px-6 py-4">
+        
+        {/* Kiri: Logo + Nama */}
+        <div className="mb-4 sm:mb-0">
+          <Link href="/" className="text-2xl font-semibold text-gray-900 hover:text-blue-600 transition">
+            Echo Reader
+          </Link>
+        </div>
 
-  {/* Kanan: Menu */}
-  <nav className="flex gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-    <Link href="/" className="hover:text-blue-500 transition">Home</Link>
-    <Link href="/blog" className="hover:text-blue-500 transition">Blog</Link>
-    <Link href="/about" className="hover:text-blue-500 transition">About</Link>
-  </nav>
-</header>
-
+        {/* Kanan: Menu */}
+        <nav className="flex flex-wrap gap-4 sm:gap-6 text-sm font-medium text-gray-700 tracking-wide">
+          <Link
+            href="/"
+            className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition"
+          >
+            Home
+          </Link>
+          <Link
+            href="/blog"
+            className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition"
+          >
+            Blog
+          </Link>
+          <Link
+            href="/about"
+            className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition"
+          >
+            About
+          </Link>
+        </nav>
+      </div>
+    </header>
   );
 }

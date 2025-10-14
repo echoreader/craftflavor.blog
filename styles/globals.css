@@ -1,18 +1,27 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-@theme static {
-  --color-primary: var(--theme-primary);
-  --color-gradient-1: var(--theme-gradient-1);
-  --color-gradient-2: var(--theme-gradient-2);
-  --color-gradient-3: var(--theme-gradient-3);
-  --color-gradient-4: var(--theme-gradient-4);
-  --font-primary: var(--theme-headings);
-  --font-secondary: var(--theme-body);
+/* ================================
+   🎨 CUSTOM VARIABLES (STATIC)
+   ================================ */
+:root {
+  --color-primary: #2563eb;
+  --color-gradient-1: #7d7aff;
+  --color-gradient-2: #2121e2;
+  --color-gradient-3: #00fff0;
+  --color-gradient-4: #8785ff;
+  --font-primary: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-secondary: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* ================================
+   🌙 DARK MODE VARIANT
+   ================================ */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ================================
+   📄 BASE TYPOGRAPHY
+   ================================ */
 @layer base {
   h1,
   h2,
@@ -25,5 +34,16 @@
 
   body {
     font-family: var(--font-secondary);
+    background-color: #fff;
+    color: #1f2937;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 }

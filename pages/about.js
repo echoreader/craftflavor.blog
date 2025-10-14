@@ -3,31 +3,42 @@ import { getPosts } from '../utils/mdx-utils';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Layout, { GradientBackground } from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
+import Layout from '../components/Layout';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
-export default function Index({ posts, globalData }) {
+export default function About({ posts, globalData }) {
   return (
     <Layout>
-      <SEO title={globalData.name} description={globalData.blogTitle} />
+      {/* === SEO Metadata === */}
+      <SEO title={`${globalData.name} | About`} description="About Echo Reader and the blog network strategy." />
+
+      {/* === HEADER === */}
       <Header name={globalData.name} />
-      <main className="w-full">
-        <h1 className="mb-12 text-3xl text-center lg:text-5xl">
-          {globalData.blogTitle}
+
+      {/* === MAIN CONTENT === */}
+      <main className="w-full bg-white text-gray-800 py-10 px-4 max-w-3xl mx-auto">
+        <h1 className="text-3xl font-bold text-center mb-8 lg:text-5xl">
+          About Echo Reader
         </h1>
-        about
+
+        <section className="space-y-4 text-base leading-relaxed">
+          <p>
+            Echo Reader is a passionate writer, SEO strategist, and digital creator behind a growing network of niche blogs. With a focus on clarity, consistency, and audience-first content, Echo crafts digital experiences that inform, inspire, and build trust.
+          </p>
+
+          <p>
+            The Echo Reader Blog Network spans multiple niches from beauty and business to DIY, travel, and health. Each blog is designed to deliver high-quality, targeted content that resonates with its specific audience.
+          </p>
+
+          <p>
+            Whether you're here to learn, explore, or collaborate, Echo Reader is committed to creating content with purpose.
+          </p>
+        </section>
       </main>
+
+      {/* === FOOTER === */}
       <Footer copyrightText={globalData.footerText} />
-      <GradientBackground
-        variant="large"
-        className="fixed top-20 opacity-40 dark:opacity-60"
-      />
-      <GradientBackground
-        variant="small"
-        className="absolute bottom-0 opacity-20 dark:opacity-10"
-      />
     </Layout>
   );
 }

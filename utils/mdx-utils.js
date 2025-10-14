@@ -103,3 +103,17 @@ export const getAllSlugs = () => {
     filePath.replace(/\.mdx?$/, '')
   );
 };
+
+export const getPaginatedPosts = (limit, page) => {
+  const allPosts = getPosts(); // sudah di-sort by date
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+
+  const paginatedPosts = allPosts.slice(startIndex, endIndex);
+
+  return {
+    posts: paginatedPosts,
+    totalPages: Math.ceil(allPosts.length / limit),
+    totalPosts: allPosts.length,
+  };
+};

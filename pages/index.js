@@ -3,35 +3,40 @@ import { getPosts } from '../utils/mdx-utils';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Layout, { GradientBackground } from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
+import Layout from '../components/Layout';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
 export default function Index({ posts, globalData }) {
   return (
     <Layout>
+      {/* === SEO Metadata === */}
       <SEO title={globalData.name} description={globalData.blogTitle} />
+
+      {/* === HEADER (Menu Navigasi) === */}
       <Header name={globalData.name} />
-      <main className="w-full">
-        <h1 className="mb-12 text-3xl text-center lg:text-5xl">
+
+      {/* === MAIN CONTENT === */}
+      <main className="w-full bg-white text-gray-800 py-10 px-4 max-w-3xl mx-auto">
+        <h1 className="text-3xl font-bold text-center mb-8 lg:text-5xl">
           {globalData.blogTitle}
         </h1>
-        <p>Welcome! I’m Echo Reader, a passionate Blogger and the architect behind the Echo Reader Blog Network (echoreader.blog). I believe in the power of targeted, high-quality content to drive engagement and deliver real value.</p>
 
-<p>My Approach to Content:</p>
+        <section className="space-y-4 text-base leading-relaxed">
+          <p>
+            Welcome! I’m Echo Reader, a passionate Blogger and the architect behind the Echo Reader Blog Network. I believe in the power of targeted, high-quality content to drive engagement and deliver real value.
+          </p>
 
-<p>My digital footprint spans over ten distinct, actively-maintained niches. This segmented approach allows for maximum SEO impact, superior audience targeting, and specialized content creation. I don’t just write; I craft unique voices designed to inform, inspire, and build trust within each specific community.</p>
+          <p className="font-semibold">My Approach to Content:</p>
+
+          <p>
+            My digital footprint spans over ten distinct, actively-maintained niches. This segmented approach allows for maximum SEO impact, superior audience targeting, and specialized content creation. I don’t just write; I craft unique voices designed to inform, inspire, and build trust within each specific community.
+          </p>
+        </section>
       </main>
+
+      {/* === FOOTER === */}
       <Footer copyrightText={globalData.footerText} />
-      <GradientBackground
-        variant="large"
-        className="fixed top-20 opacity-40 dark:opacity-60"
-      />
-      <GradientBackground
-        variant="small"
-        className="absolute bottom-0 opacity-20 dark:opacity-10"
-      />
     </Layout>
   );
 }
