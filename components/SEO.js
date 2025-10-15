@@ -11,6 +11,7 @@ export default function SEO({ title, description }) {
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <link rel="canonical" href={canonicalUrl} />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
     </Head>
   );
 }
