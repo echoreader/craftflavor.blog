@@ -11,7 +11,11 @@ export default function About({ posts, globalData }) {
   return (
     <Layout>
       {/* === SEO Metadata === */}
-      <SEO title={`${globalData.name} | About`} description="About Echo Reader and the blog network strategy." />
+      <SEO
+  title="About Echo Reader – Human Centered Blog Curator"
+  description="Echo Reader curates backlinks to Blogspot content focused on people and society building a thoughtful network of stories, voices, and shared experiences."
+/>
+
 
       {/* === HEADER === */}
       <Header name={globalData.name} />

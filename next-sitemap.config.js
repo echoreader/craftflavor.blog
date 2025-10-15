@@ -1,5 +1,5 @@
-// filepath: c:\Users\tekos\OneDrive\Documents\VisualCodeProjects\nextjs-blog-echo-reader\next-sitemap.config.js
 module.exports = {
-  siteUrl: 'https://echoreader.netlify.app', // ganti dengan domain kamu
+  siteUrl: 'https://echoreader.netlify.app', // Tanpa trailing slash
   generateRobotsTxt: true,
+  trailingSlash: false, // Hindari double slash
 }

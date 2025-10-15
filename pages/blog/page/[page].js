@@ -14,7 +14,12 @@ const POSTS_PER_PAGE = 5;
 export default function BlogPage({ posts, currentPage, totalPages, globalData }) {
   return (
     <Layout>
-      <SEO title={`${globalData.name} | Blog Page ${currentPage}`} description={globalData.blogTitle} />
+      {/*<SEO title={`${globalData.name} | Blog Page ${currentPage}`} description={globalData.blogTitle} />*/}
+      <SEO
+  title="Echo Reader Blog – Latest Posts on Social Life & Community"
+  description="Browse recent articles from Echo Reader, linking to Blogspot posts about people, relationships, and society. Updated regularly with fresh perspectives."
+/>
+
       <Header name={globalData.name} />
 
       <main className="w-full bg-white text-gray-800 py-10 px-4 max-w-4xl mx-auto">
@@ -54,20 +59,11 @@ export default function BlogPage({ posts, currentPage, totalPages, globalData })
   );
 }
 
-export async function getStaticPaths() {
-  const { totalPages } = getPaginatedPosts(POSTS_PER_PAGE, 1);
-
-  const paths = Array.from({ length: totalPages }, (_, i) => ({
-    params: { page: (i + 1).toString() },
-  }));
-
-  return { paths, fallback: false };
-}
 
 export async function getStaticProps({ params }) {
   const page = parseInt(params.page);
   const { posts, totalPages } = getPaginatedPosts(POSTS_PER_PAGE, page);
-  const globalData = getGlobalData();
+  const globalData = await getGlobalData(); // ✅ pakai await
 
   return {
     props: {
@@ -78,3 +74,15 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+
+
+export async function getStaticPaths() {
+  const { totalPages } = getPaginatedPosts(POSTS_PER_PAGE, 1);
+
+  const paths = Array.from({ length: totalPages }, (_, i) => ({
+    params: { page: (i + 1).toString() },
+  }));
+
+  return { paths, fallback: 'blocking' };
+}
+

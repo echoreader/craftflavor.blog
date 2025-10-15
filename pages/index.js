@@ -11,7 +11,11 @@ export default function Index({ posts, globalData }) {
   return (
     <Layout>
       {/* === SEO Metadata === */}
-      <SEO title={globalData.name} description={globalData.blogTitle} />
+      <SEO
+  title="Echo Reader – Curated Insights on People & Society"
+  description="Echo Reader connects readers to thoughtful Blogspot content on human stories, social dynamics, and cultural perspectives curated for depth and empathy."
+/>
+
 
       {/* === HEADER (Menu Navigasi) === */}
       <Header name={globalData.name} />
