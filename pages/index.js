@@ -6,10 +6,15 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
+import Schema from '../components/Schema';
+
 
 export default function Index({ posts, globalData }) {
   return (
     <Layout>
+
+<Schema type="organization" />
+
       {/* === SEO Metadata === */}
       <SEO
   title="Echo Reader – Curated Insights on People & Society"

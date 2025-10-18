@@ -7,9 +7,14 @@ import Layout from '../components/Layout';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
+import Schema from '../components/Schema';
+
 export default function About({ posts, globalData }) {
   return (
     <Layout>
+
+<Schema type="profile" />
+
       {/* === SEO Metadata === */}
       <SEO
   title="About Echo Reader – Human Centered Blog Curator"

@@ -17,6 +17,9 @@ import Header from '../components/Header';
 import Layout, { GradientBackground } from '../components/Layout';
 import SEO from '../components/SEO';
 
+import Schema from '../components/Schema';
+
+
 const components = {
   a: CustomLink,
   Head,
@@ -37,6 +40,17 @@ export default function PostPage({
         title={`${frontMatter.title} - ${globalData.name}`}
         description={frontMatter.description}
       />
+
+<Schema
+  type="blogpost"
+  data={{
+    title: frontMatter.title,
+    description: frontMatter.description,
+    date: frontMatter.date,
+    url: `https://echoreader.netlify.app/${slug}`
+  }}
+/>
+
 
       {/* === HEADER === */}
       <Header name={globalData.name} />

@@ -9,11 +9,20 @@ import SEO from '../../../components/SEO';
 import ArrowIcon from '../../../components/ArrowIcon';
 import Pagination from '../../../components/Pagination';
 
+import Schema from '../../../components/Schema';
+
+
 const POSTS_PER_PAGE = 5;
 
 export default function BlogPage({ posts, currentPage, totalPages, globalData }) {
   return (
     <Layout>
+
+<Schema type="bloglist" data={{ posts, currentPage }} />
+
+
+
+
       {/*<SEO title={`${globalData.name} | Blog Page ${currentPage}`} description={globalData.blogTitle} />*/}
       <SEO
   title="Echo Reader Blog – Latest Posts on Social Life & Community"
