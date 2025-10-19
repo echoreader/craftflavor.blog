@@ -8,22 +8,24 @@ export default function Footer({ copyrightText }) {
 
         <p className="text-sm text-gray-600 dark:text-gray-400">
           Powered by{' '}
-          <a
-            href="https://echoreader.blog"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-blue-600 dark:hover:text-blue-400"
-          >
+        
             Echo Reader
-          </a>{' '}
-          |{' '}
+        {' '} 
+          | {' '}
           <a
-            href="https://digitalfootstep.blogspot.com/"
+            href="https://borncraft.blogspot.com/"
             target="_blank"
-            rel="noopener noreferrer"
             className="hover:text-blue-600 dark:hover:text-blue-400"
           >
-            digitalfootstep.blogspot.com
+            Born Craft
+          </a> {' '}
+          | {' '}
+          <a
+            href="https://cookmanyrecipe.blogspot.com/"
+            target="_blank"
+            className="hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Cook Many Recipe
           </a>
         </p>
       </div>
