@@ -47,7 +47,7 @@ export default function PostPage({
     title: frontMatter.title,
     description: frontMatter.description,
     date: frontMatter.date,
-    url: `https://echoreader.netlify.app/${slug}`
+    url: `https://craftflavor.blog/${slug}`
   }}
 />
 
@@ -57,64 +57,30 @@ export default function PostPage({
 
       {/* === MAIN CONTENT === */}
       <main className="w-full max-w-2xl mx-auto px-4 pt-10 pb-20">
-        <article data-sb-object-id={`posts/${slug}.mdx`}>
-          <header>
-            <h1
-              className="mb-6 text-3xl text-center md:text-5xl dark:text-white"
-              data-sb-field-path="title"
-            >
-              {frontMatter.title}
-            </h1>
-            {frontMatter.description && (
-              <p
-                className="mb-8 text-lg text-center text-gray-600 dark:text-gray-300"
-                data-sb-field-path="description"
-              >
-                {frontMatter.description}
-              </p>
-            )}
-          </header>
+  <article data-sb-object-id={`posts/${slug}.mdx`}>
+    <section
+      className="prose dark:prose-invert prose-headings:text-left"
+      data-sb-field-path="markdown_content"
+    >
+      <h1 className="mb-6 text-3xl md:text-5xl dark:text-white" data-sb-field-path="title">
+        {frontMatter.title}
+      </h1>
+      {frontMatter.description && (
+        <p className="mb-8 text-lg text-gray-600 dark:text-gray-300" data-sb-field-path="description">
+          {frontMatter.description}
+        </p>
+      )}
 
-          <section
-            className="prose dark:prose-invert"
-            data-sb-field-path="markdown_content"
-          >
-            <MDXRemote {...source} components={components} />
-          </section>
+      <MDXRemote {...source} components={components} />
+    </section>
 
-          {/* === PREV / NEXT NAVIGATION === */}
-          <div className="grid mt-12 md:grid-cols-2 gap-4">
-            {prevPost && (
-              <Link
-                href={`/${prevPost.slug}`}
-                className="flex flex-col px-6 py-6 border rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/50 transition"
-              >
-                <p className="mb-2 text-sm uppercase text-gray-500 dark:text-white dark:opacity-60">
-                  Previous
-                </p>
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
-                  {prevPost.title}
-                </h4>
-                <ArrowIcon className="mt-4 transform rotate-180 self-start" />
-              </Link>
-            )}
-            {nextPost && (
-              <Link
-                href={`/${nextPost.slug}`}
-                className="flex flex-col px-6 py-6 border rounded-lg bg-gray-50 hover:bg-gray-100 dark:bg-black/30 dark:hover:bg-black/50 transition"
-              >
-                <p className="mb-2 text-sm uppercase text-gray-500 dark:text-white dark:opacity-60">
-                  Next
-                </p>
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-white">
-                  {nextPost.title}
-                </h4>
-                <ArrowIcon className="mt-4 self-end" />
-              </Link>
-            )}
-          </div>
-        </article>
-      </main>
+    {/* === PREV / NEXT NAVIGATION === */}
+    {/* <div className="grid mt-12 md:grid-cols-2 gap-4">
+      ...prev/next links... 
+    </div>*/}
+  </article>
+</main>
+
 
       {/* === FOOTER === */}
       <Footer copyrightText={globalData.footerText} />

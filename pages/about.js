@@ -17,8 +17,8 @@ export default function About({ posts, globalData }) {
 
       {/* === SEO Metadata === */}
       <SEO
-  title="About Echo Reader – Human Centered Blog Curator"
-  description="Echo Reader curates backlinks to Blogspot content focused on people and society building a thoughtful network of stories, voices, and shared experiences."
+  title="About CraftFlavor — Where DIY Meets Culinary Creativity"
+  description="CraftFlavor is a creative space for makers who love food and design. We blend DIY tutorials, handmade projects, cooking hacks, and global recipes to inspire flavorful living. Learn more about our mission to craft joy through creativity and cuisine."
 />
 
 
@@ -28,21 +28,20 @@ export default function About({ posts, globalData }) {
       {/* === MAIN CONTENT === */}
       <main className="w-full bg-white text-gray-800 py-10 px-4 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8 lg:text-5xl">
-          About Echo Reader
+          About CraftFlavor
         </h1>
 
         <section className="space-y-4 text-base leading-relaxed">
           <p>
-            Echo Reader is a passionate writer, SEO strategist, and digital creator behind a growing network of niche blogs. With a focus on clarity, consistency, and audience-first content, Echo crafts digital experiences that inform, inspire, and build trust.
+            CraftFlavor celebrates creativity in the kitchen and beyond. From DIY projects and food crafts to cooking hacks and global recipes, we invite you to craft joy through flavor, design, and everyday inspiration.
           </p>
 
           <p>
-            The Echo Reader Blog Network spans multiple niches from beauty and business to DIY, travel, and health. Each blog is designed to deliver high-quality, targeted content that resonates with its specific audience.
+            This blog is curated by Echo Reader — a modular content studio exploring niche storytelling across independent domains. 
+            <br/>
+            <a href="https://echoreader.blog" rel="nofollow noopener" target="_blank">Echo Reader</a>.
           </p>
 
-          <p>
-            Whether you are here to learn, explore, or collaborate, Echo Reader is committed to creating content with purpose.
-          </p>
         </section>
       </main>
 

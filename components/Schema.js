@@ -6,8 +6,8 @@ export default function Schema({ type, data = {} }) {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Echo Reader",
-      "url": "https://echoreader.netlify.app",
-      "logo": "https://echoreader.netlify.app/logo.png",
+      "url": "https://craftflavor.blog",
+      "logo": "https://craftflavor.blog/logo.png",
       "sameAs": [
         "https://blogspot.com/echo-reader",
         "https://twitter.com/echoreader"
@@ -17,14 +17,14 @@ export default function Schema({ type, data = {} }) {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Echo Reader Blog",
-      "url": `https://echoreader.netlify.app/blog/page/${data.currentPage || 1}`,
+      "url": `https://craftflavor.blog/blog/page/${data.currentPage || 1}`,
       "description": "Browse curated articles from Echo Reader on people, relationships, and society.",
       "hasPart": Array.isArray(data.posts)
         ? data.posts.map((post) => ({
             "@type": "BlogPosting",
             "headline": post.data.title || "Untitled",
             "datePublished": post.data.date || "2025-01-01",
-            "url": `https://echoreader.netlify.app/${post.filePath.replace(/\.mdx?$/, '')}`
+            "url": `https://craftflavor.blog/${post.filePath.replace(/\.mdx?$/, '')}`
           }))
         : [],
       "publisher": {
@@ -44,14 +44,14 @@ export default function Schema({ type, data = {} }) {
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": data.url || "https://echoreader.netlify.app/blog"
+        "@id": data.url || "https://craftflavor.blog/blog"
       }
     },
     profile: {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Echo",
-      "url": "https://echoreader.netlify.app/about",
+      "url": "https://craftflavor.blog/about",
       "sameAs": [
         "https://blogspot.com/echo-reader",
         "https://twitter.com/echoreader"

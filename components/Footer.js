@@ -1,33 +1,35 @@
 export default function Footer({ copyrightText }) {
   return (
     <footer className="w-full bg-gray-100 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700 py-12 mt-16">
-      <div className="max-w-2xl mx-auto px-4 flex flex-col items-center text-center">
-        <p className="text-sm font-semibold uppercase text-gray-600 dark:text-gray-400 tracking-wide mb-4">
-          {copyrightText}
-        </p>
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Left Column */}
+        <div className="flex flex-col justify-start text-left">
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            All Right Reserved <span className="font-medium">Craftflavor</span>
+          </p>
+        </div>
 
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          Powered by{' '}
-        
-            Echo Reader
-        {' '} 
-          | {' '}
-          <a
-            href="https://borncraft.blogspot.com/"
-            target="_blank"
-            className="hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            Born Craft
-          </a> {' '}
-          | {' '}
-          <a
-            href="https://cookmanyrecipe.blogspot.com/"
-            target="_blank"
-            className="hover:text-blue-600 dark:hover:text-blue-400"
-          >
-            Cook Many Recipe
-          </a>
-        </p>
+        {/* Right Column */}
+        <div className="flex flex-col md:items-end md:text-right text-left">
+          <div className="flex flex-col space-y-1">
+            <a
+              href="https://borncraft.blogspot.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Born Craft
+            </a>
+            <a
+              href="https://cookmanyrecipe.blogspot.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Cook Many Recipe
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

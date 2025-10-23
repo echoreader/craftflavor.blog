@@ -25,8 +25,8 @@ export default function BlogPage({ posts, currentPage, totalPages, globalData })
 
       {/*<SEO title={`${globalData.name} | Blog Page ${currentPage}`} description={globalData.blogTitle} />*/}
       <SEO
-  title="Echo Reader Blog – Latest Posts on Social Life & Community"
-  description="Browse recent articles from Echo Reader, linking to Blogspot posts about people, relationships, and society. Updated regularly with fresh perspectives."
+  title="CraftFlavor Articles — DIY Tutorials, Food Crafts & Flavorful Projects for Creative Makers"
+  description="Explore CraftFlavor’s curated articles on handmade projects, cooking hacks, and food-inspired crafts. From kitchen creativity to practical design ideas, our blog celebrates the art of making with flavor and heart."
 />
 
       <Header name={globalData.name} />

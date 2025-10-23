@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 export default function SEO({ title, description }) {
   const router = useRouter();
-  const canonicalUrl = `https://echoreader.netlify.app${router.asPath === '/' ? '' : router.asPath}`;
+  const canonicalUrl = `https://craftflavor.blog${router.asPath === '/' ? '' : router.asPath}`;
 
   return (
     <Head>

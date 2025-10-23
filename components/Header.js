@@ -14,7 +14,7 @@ export default function Header() {
             href="/"
             className="text-2xl font-semibold text-gray-900 hover:text-blue-600 transition"
           >
-            Echo Reader
+            Craftflavor
           </Link>
 
           {/* ☰ hanya muncul di mobile */}

@@ -17,8 +17,8 @@ export default function Index({ posts, globalData }) {
 
       {/* === SEO Metadata === */}
       <SEO
-  title="Echo Reader – Curated Insights on People & Society"
-  description="Echo Reader connects readers to thoughtful Blogspot content on human stories, social dynamics, and cultural perspectives curated for depth and empathy."
+  title="CraftFlavor Blog — Creative DIY & Flavorful Recipes for Everyday Makers"
+  description="Welcome to CraftFlavor, where handmade creativity meets culinary inspiration. Explore DIY tutorials, food crafts, cooking hacks, and global recipes designed for curious makers and home chefs who love crafting flavor with heart."
 />
 
 
@@ -28,18 +28,12 @@ export default function Index({ posts, globalData }) {
       {/* === MAIN CONTENT === */}
       <main className="w-full bg-white text-gray-800 py-10 px-4 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8 lg:text-5xl">
-          {globalData.blogTitle}
+          {globalData.blogTitle} Craft with Flavor — Handmade Joy Meets Kitchen Creativity
         </h1>
 
         <section className="space-y-4 text-base leading-relaxed">
           <p>
-            Welcome! I’m Echo Reader, a passionate Blogger and the architect behind the Echo Reader Blog Network. I believe in the power of targeted, high-quality content to drive engagement and deliver real value.
-          </p>
-
-          <p className="font-semibold">My Approach to Content:</p>
-
-          <p>
-            My digital footprint spans over ten distinct, actively-maintained niches. This segmented approach allows for maximum SEO impact, superior audience targeting, and specialized content creation. I don’t just write; I craft unique voices designed to inform, inspire, and build trust within each specific community.
+            CraftFlavor celebrates the art of making through DIY projects and culinary inspiration. From food crafts and cooking hacks to handmade design ideas, we invite you to create with heart, flavor, and everyday joy.
           </p>
         </section>
       </main>
