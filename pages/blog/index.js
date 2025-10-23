@@ -1,12 +1,12 @@
-export async function getServerSideProps() {
-  return {
-    redirect: {
-      destination: '/blog/page/1',
-      permanent: false,
-    },
-  };
-}
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function BlogIndex() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/blog/page/1');
+  }, []);
+
   return null;
 }
