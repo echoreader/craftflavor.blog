@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-6 py-4">
-        {/* Baris atas: Echo Reader + ☰ */}
+        {/* Line Up: Echo Reader + ☰ */}
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -17,7 +17,7 @@ export default function Header() {
             Craftflavor
           </Link>
 
-          {/* ☰ hanya muncul di mobile */}
+          {/* ☰ Only Show at Mobile */}
           <button
             className="flex flex-col justify-center gap-1 sm:hidden"
             aria-label="Toggle menu"

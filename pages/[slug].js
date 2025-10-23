@@ -16,9 +16,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout, { GradientBackground } from '../components/Layout';
 import SEO from '../components/SEO';
-
 import Schema from '../components/Schema';
-
 
 const components = {
   a: CustomLink,
@@ -41,46 +39,44 @@ export default function PostPage({
         description={frontMatter.description}
       />
 
-<Schema
-  type="blogpost"
-  data={{
-    title: frontMatter.title,
-    description: frontMatter.description,
-    date: frontMatter.date,
-    url: `https://craftflavor.blog/${slug}`
-  }}
-/>
-
+      <Schema
+        type="blogpost"
+        data={{
+          title: frontMatter.title,
+          description: frontMatter.description,
+          date: frontMatter.date,
+          url: `https://craftflavor.blog/${slug}`
+        }}
+      />
 
       {/* === HEADER === */}
       <Header name={globalData.name} />
 
       {/* === MAIN CONTENT === */}
       <main className="w-full max-w-2xl mx-auto px-4 pt-10 pb-20">
-  <article data-sb-object-id={`posts/${slug}.mdx`}>
-    <section
-      className="prose dark:prose-invert prose-headings:text-left"
-      data-sb-field-path="markdown_content"
-    >
-      <h1 className="mb-6 text-3xl md:text-5xl dark:text-white" data-sb-field-path="title">
-        {frontMatter.title}
-      </h1>
-      {frontMatter.description && (
-        <p className="mb-8 text-lg text-gray-600 dark:text-gray-300" data-sb-field-path="description">
-          {frontMatter.description}
-        </p>
-      )}
+        <article data-sb-object-id={`posts/${slug}.mdx`}>
+          <section
+            className="prose dark:prose-invert prose-headings:text-left"
+            data-sb-field-path="markdown_content"
+          >
+            <h1 className="mb-6 text-3xl md:text-5xl dark:text-white" data-sb-field-path="title">
+              {frontMatter.title}
+            </h1>
+            {frontMatter.description && (
+              <p className="mb-8 text-lg text-gray-600 dark:text-gray-300" data-sb-field-path="description">
+                {frontMatter.description}
+              </p>
+            )}
 
-      <MDXRemote {...source} components={components} />
-    </section>
+            <MDXRemote {...source} components={components} />
+          </section>
 
-    {/* === PREV / NEXT NAVIGATION === */}
-    {/* <div className="grid mt-12 md:grid-cols-2 gap-4">
-      ...prev/next links... 
-    </div>*/}
-  </article>
-</main>
-
+          {/* === PREV / NEXT NAVIGATION === */}
+          {/* <div className="grid mt-12 md:grid-cols-2 gap-4">
+            ...prev/next links... 
+          </div>*/}
+        </article>
+      </main>
 
       {/* === FOOTER === */}
       <Footer copyrightText={globalData.footerText} />
