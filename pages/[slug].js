@@ -17,6 +17,7 @@ import Header from '../components/Header';
 import Layout, { GradientBackground } from '../components/Layout';
 import SEO from '../components/SEO';
 import Schema from '../components/Schema';
+import { siteUrl } from "../utils/config-utils"; // ← ambil siteUrl
 
 const components = {
   a: CustomLink,
@@ -45,7 +46,7 @@ export default function PostPage({
           title: frontMatter.title,
           description: frontMatter.description,
           date: frontMatter.date,
-          url: `https://craftflavor.blog/${slug}`
+          url: `${siteUrl}/${slug}`
         }}
       />
 

@@ -10,7 +10,7 @@ import ArrowIcon from '../../../components/ArrowIcon';
 import Pagination from '../../../components/Pagination';
 
 import Schema from '../../../components/Schema';
-
+import { siteUrl } from "../../../utils/config-utils"; // ← ambil siteUrl
 
 const POSTS_PER_PAGE = 5;
 
@@ -41,9 +41,9 @@ export default function BlogPage({ posts, currentPage, totalPages, globalData })
             return (
               <li key={slug} className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
                 <Link
-                  as={`https://craftflavor.blog/${slug}`}
+                  as={`${siteUrl}/${slug}`}
                   href="/[slug]"
-                  aria-label={`Baca artikel: ${post.data.title}`}
+                  aria-label={`Read Article: ${post.data.title}`}
                   className="block px-6 py-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 >
                   <p className="mb-2 text-xs font-semibold uppercase text-gray-500">
