@@ -1,3 +1,9 @@
 [build]
   command = "npm run build"
   publish = ".next"
+
+[[redirects]]
+     from = "https://echo-reader.netlify.app/*"
+     to = "https://vibefit.blog/:splat"
+     status = 301
+     force = true
