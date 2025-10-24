@@ -3,7 +3,7 @@
   publish = ".next"
 
 [[redirects]]
-     from = "https://echo-reader.netlify.app/*"
-     to = "https://vibefit.blog/:splat"
+     from = "https://echoreader.netlify.app/*"
+     to = "https://craftflavor.blog/:splat"
      status = 301
      force = true
