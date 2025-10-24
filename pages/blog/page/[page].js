@@ -41,7 +41,7 @@ export default function BlogPage({ posts, currentPage, totalPages, globalData })
             return (
               <li key={slug} className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
                 <Link
-                  as={`/${slug}`}
+                  as={`https://craftflavor.blog/${slug}`}
                   href="/[slug]"
                   aria-label={`Baca artikel: ${post.data.title}`}
                   className="block px-6 py-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
