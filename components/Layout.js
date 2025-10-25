@@ -47,7 +47,7 @@ export default function Layout({ children }) {
 
   // === LAYOUT STRUCTURE ===
   return (
-    <div className="relative pb-24 overflow-hidden">
+    <div className="relative pb-24 overflow-visible">
       {/* Header, Footer, Gradient, and Content free width */}
       {children}
     </div>
