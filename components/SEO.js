@@ -7,30 +7,30 @@ export default function SEO({ title, description }) {
   const canonicalUrl = `https://craftflavor.blog${router.asPath === '/' ? '' : router.asPath}`;
 
   return (
+    <>
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <link rel="canonical" href={canonicalUrl} />
       <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
-
-      <Script id="skip-analytics" strategy="beforeInteractive">
-  {`
-    if (window.location.search.includes("no-track")) {
-      localStorage.setItem("skipAnalytics", "true");
-    }
-
-    if (localStorage.getItem("skipAnalytics") !== "true") {
-      const cfScript = document.createElement("script");
-      cfScript.defer = true;
-      cfScript.src = "https://static.cloudflareinsights.com/beacon.min.js";
-      cfScript.setAttribute("data-cf-beacon", '{"token": "7699fbd2379d441588fc8971b1541b1c"}');
-      document.head.appendChild(cfScript);
-    }
-  `}
-</Script>
-
-
     </Head>
+
+     <Script id="skip-analytics" strategy="lazyOnload">
+        {`
+          if (window.location.search.includes("no-track")) {
+            localStorage.setItem("skipAnalytics", "true");
+          }
+
+          if (localStorage.getItem("skipAnalytics") !== "true") {
+            const cfScript = document.createElement("script");
+            cfScript.defer = true;
+            cfScript.src = "https://static.cloudflareinsights.com/beacon.min.js";
+            cfScript.setAttribute("data-cf-beacon", '{"token": "7699fbd2379d441588fc8971b1541b1c"}');
+            document.head.appendChild(cfScript);
+          }
+        `}
+      </Script>
+      </>
   );
 }
