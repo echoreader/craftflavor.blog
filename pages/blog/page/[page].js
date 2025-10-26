@@ -41,8 +41,8 @@ export default function BlogPage({ posts, currentPage, totalPages, globalData })
             return (
               <li key={slug} className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
                 <Link
-                  as={`${siteUrl}/${slug}`}
-                  href="/[slug]"
+                  
+                  href={`${siteUrl}/${slug}`}
                   aria-label={`Read Article: ${post.data.title}`}
                   className="block px-6 py-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 >
