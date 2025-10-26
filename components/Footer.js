@@ -15,7 +15,7 @@ export default function Footer({ copyrightText }) {
             <a
               href="https://borncraft.blogspot.com/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
             >
               Born Craft
@@ -23,7 +23,7 @@ export default function Footer({ copyrightText }) {
             <a
               href="https://cookmanyrecipe.blogspot.com/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener noreferrer"
               className="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
             >
               Cook Many Recipe
