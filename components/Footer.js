@@ -1,6 +1,6 @@
 import { siteUrl } from "../utils/config-utils"; // ← ambil siteUrl
 
-export default function Footer({ copyrightText }) {
+export default function Footer({ }) {
   return (
     <footer className="w-full bg-gray-100 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700 py-12 mt-16">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">

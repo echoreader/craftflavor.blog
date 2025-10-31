@@ -1,20 +1,16 @@
 import { getGlobalData } from '../utils/global-data';
 import {
-  getNextPostBySlug,
   getPostBySlug,
-  getPreviousPostBySlug,
   getPostFilePaths,
 } from '../utils/mdx-utils';
 
 import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
-import Link from 'next/link';
-import ArrowIcon from '../components/ArrowIcon';
 import CustomImage from '../components/CustomImage';
 import CustomLink from '../components/CustomLink';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Layout, { GradientBackground } from '../components/Layout';
+import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import Schema from '../components/Schema';
 import { siteUrl } from "../utils/config-utils"; // ← ambil siteUrl
@@ -28,8 +24,6 @@ const components = {
 export default function PostPage({
   source,
   frontMatter,
-  prevPost,
-  nextPost,
   globalData,
   slug,
 }) {
@@ -63,6 +57,17 @@ export default function PostPage({
             <h1 className="mb-6 text-3xl md:text-5xl dark:text-white" data-sb-field-path="title">
               {frontMatter.title}
             </h1>
+
+            {frontMatter.date && (
+              <p className="mb-4 text-sm text-gray-500 dark:text-gray-400" data-sb-field-path="date">
+                {new Date(frontMatter.date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric"
+                })}
+              </p>
+            )}
+            
             {frontMatter.description && (
               <p className="mb-8 text-lg text-gray-600 dark:text-gray-300" data-sb-field-path="description">
                 {frontMatter.description}
@@ -88,8 +93,6 @@ export default function PostPage({
 export const getStaticProps = async ({ params }) => {
   const globalData = getGlobalData();
   const { mdxSource, data } = await getPostBySlug(params.slug);
-  const prevPost = getPreviousPostBySlug(params.slug);
-  const nextPost = getNextPostBySlug(params.slug);
 
   return {
     props: {
@@ -97,8 +100,6 @@ export const getStaticProps = async ({ params }) => {
       source: mdxSource,
       frontMatter: data,
       slug: params.slug,
-      prevPost,
-      nextPost,
     },
   };
 };

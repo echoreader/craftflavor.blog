@@ -6,17 +6,12 @@ import rehypePrism from '@mapbox/rehype-prism';
 import remarkGfm from 'remark-gfm';
 import rehypeUnwrapImages from 'rehype-unwrap-images';
 
-// POSTS_PATH is useful when you want to get the path to a specific file
 export const POSTS_PATH = path.join(process.cwd(), 'posts');
 
-// getPostFilePaths is the list of all mdx files inside the POSTS_PATH directory
 export const getPostFilePaths = () => {
-  return (
-    fs
-      .readdirSync(POSTS_PATH)
-      // Only include md(x) files
-      .filter((path) => /\.mdx?$/.test(path))
-  );
+  return fs
+    .readdirSync(POSTS_PATH)
+    .filter((path) => /\.mdx?$/.test(path));
 };
 
 export const sortPostsByDate = (posts) => {
@@ -27,31 +22,22 @@ export const sortPostsByDate = (posts) => {
   });
 };
 
-export const getPosts = () => {
-  let posts = getPostFilePaths().map((filePath) => {
+export const getAllPosts = () => {
+  const posts = getPostFilePaths().map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
     const { content, data } = matter(source);
-
-    return {
-      content,
-      data,
-      filePath,
-    };
+    return { content, data, filePath };
   });
 
-  posts = sortPostsByDate(posts);
-
-  return posts;
+  return sortPostsByDate(posts);
 };
 
 export const getPostBySlug = async (slug) => {
   const postFilePath = path.join(POSTS_PATH, `${slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
-
   const { content, data } = matter(source);
 
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [rehypePrism, rehypeUnwrapImages],
@@ -62,58 +48,8 @@ export const getPostBySlug = async (slug) => {
   return { mdxSource, data, postFilePath };
 };
 
-export const getNextPostBySlug = (slug) => {
-  const posts = getPosts();
-  const currentFileName = `${slug}.mdx`;
-  const currentPost = posts.find((post) => post.filePath === currentFileName);
-  const currentPostIndex = posts.indexOf(currentPost);
-
-  const post = posts[currentPostIndex - 1];
-  // no prev post found
-  if (!post) return null;
-
-  const nextPostSlug = post?.filePath.replace(/\.mdx?$/, '');
-
-  return {
-    title: post.data.title,
-    slug: nextPostSlug,
-  };
-};
-
-export const getPreviousPostBySlug = (slug) => {
-  const posts = getPosts();
-  const currentFileName = `${slug}.mdx`;
-  const currentPost = posts.find((post) => post.filePath === currentFileName);
-  const currentPostIndex = posts.indexOf(currentPost);
-
-  const post = posts[currentPostIndex + 1];
-  // no prev post found
-  if (!post) return null;
-
-  const previousPostSlug = post?.filePath.replace(/\.mdx?$/, '');
-
-  return {
-    title: post.data.title,
-    slug: previousPostSlug,
-  };
-};
-
 export const getAllSlugs = () => {
   return getPostFilePaths().map((filePath) =>
     filePath.replace(/\.mdx?$/, '')
   );
-};
-
-export const getPaginatedPosts = (limit, page) => {
-  const allPosts = getPosts(); // sudah di-sort by date
-  const startIndex = (page - 1) * limit;
-  const endIndex = startIndex + limit;
-
-  const paginatedPosts = allPosts.slice(startIndex, endIndex);
-
-  return {
-    posts: paginatedPosts,
-    totalPages: Math.ceil(allPosts.length / limit),
-    totalPosts: allPosts.length,
-  };
 };

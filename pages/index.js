@@ -1,13 +1,9 @@
-import Link from 'next/link';
-import { getPosts } from '../utils/mdx-utils';
-
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 import Schema from '../components/Schema';
-
 
 export default function Index({ posts, globalData }) {
   return (
@@ -44,8 +40,7 @@ export default function Index({ posts, globalData }) {
 }
 
 export function getStaticProps() {
-  const posts = getPosts();
   const globalData = getGlobalData();
 
-  return { props: { posts, globalData } };
+  return { props: { globalData } };
 }

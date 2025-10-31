@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import { getPosts } from '../utils/mdx-utils';
-
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
@@ -9,7 +6,7 @@ import SEO from '../components/SEO';
 
 import Schema from '../components/Schema';
 
-export default function About({ posts, globalData }) {
+export default function About({ globalData }) {
   return (
     <Layout>
 
@@ -51,8 +48,7 @@ export default function About({ posts, globalData }) {
 }
 
 export function getStaticProps() {
-  const posts = getPosts();
   const globalData = getGlobalData();
 
-  return { props: { posts, globalData } };
+  return { props: { globalData } };
 }
