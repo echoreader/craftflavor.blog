@@ -15,7 +15,7 @@ export default function About({ globalData }) {
       {/* === SEO Metadata === */}
       <SEO
         title="About CraftFlavor — Where DIY Meets Culinary Creativity"
-        description="CraftFlavor is a creative space for makers who love food and design. We blend DIY tutorials, handmade projects, cooking hacks, and global recipes to inspire flavorful living. Learn more about our mission to craft joy through creativity and cuisine."
+        description="CraftFlavor is a creative space for makers who love food and design. We blend DIY tutorials, handmade projects, cooking hacks, and global recipes."
       />
 
       {/* === HEADER === */}

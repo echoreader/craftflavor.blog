@@ -15,8 +15,8 @@ export default function BlogPage({ posts, globalData }) {
     <Layout>
       <Schema type="bloglist" data={{ posts }} />
       <SEO
-        title="CraftFlavor Articles — DIY Tutorials, Food Crafts & Flavorful Projects for Creative Makers"
-        description="Explore CraftFlavor’s curated articles on handmade projects, cooking hacks, and food-inspired crafts. From kitchen creativity to practical design ideas, our blog celebrates the art of making with flavor and heart."
+        title="CraftFlavor Articles — DIY Tutorials, Food Crafts & Flavorful Projects"
+        description="Explore CraftFlavor curated articles on handmade projects, cooking hacks, and food-inspired crafts. From kitchen creativity to practical design ideas."
       />
       <Header name={globalData.name} />
       <main className="w-full bg-white text-gray-800 py-10 px-4 max-w-4xl mx-auto">
@@ -27,7 +27,7 @@ export default function BlogPage({ posts, globalData }) {
             return (
               <li key={slug} className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
                 <a
-                  href={`${siteUrl}/${slug}`}
+                  href={`${siteUrl}/${slug}/`}
                   aria-label={`Read Article: ${post.data.title}`}
                   className="block px-6 py-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 >

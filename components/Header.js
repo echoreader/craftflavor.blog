@@ -32,8 +32,8 @@ export default function Header() {
           {/* Menu desktop */}
           <nav className="hidden sm:flex gap-6 text-sm font-medium text-gray-700 tracking-wide">
             {/*<Link href="/" className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition">Home</Link>*/}
-            <a href={`${siteUrl}/blog`} className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition">Blog</a>
-            <a href={`${siteUrl}/about`} className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition">About</a>
+            <a href={`${siteUrl}/blog/`} className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition">Blog</a>
+            <a href={`${siteUrl}/about/`} className="px-3 py-2 rounded-md hover:bg-gray-100 hover:text-blue-600 transition">About</a>
           </nav>
         </div>
 

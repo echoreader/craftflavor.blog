@@ -14,7 +14,7 @@ export default function Index({ posts, globalData }) {
       {/* === SEO Metadata === */}
       <SEO
         title="CraftFlavor Blog — Creative DIY & Flavorful Recipes for Everyday Makers"
-        description="Welcome to CraftFlavor, where handmade creativity meets culinary inspiration. Explore DIY tutorials, food crafts, cooking hacks, and global recipes designed for curious makers and home chefs who love crafting flavor with heart."
+        description="Welcome to CraftFlavor, where handmade creativity meets culinary inspiration. Explore DIY tutorials, food crafts, cooking hacks."
       />
 
       {/* === HEADER (Menu Navigasi) === */}
