@@ -1,20 +1,31 @@
+import { siteUrl } from "../utils/config-utils"; // ← ambil siteUrl
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 
 export default function SEO({ title, description }) {
   const router = useRouter();
-  const canonicalUrl = `https://craftflavor.blog${router.asPath === '/' ? '' : router.asPath}`;
+  const canonicalUrl = `${siteUrl}${router.asPath === '/' ? '' : router.asPath}`;
 
   return (
     <>
     <Head>
+      {/* 1. SEO meta */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="robots" content="index, follow" />
       <meta property="og:title" content={title} />
       <link rel="canonical" href={canonicalUrl} />
-      <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
-      <meta name="robots" content="index, follow"/>
+
+      {/* 2. Google AdSense Script */}
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-6771362188294710"
+        crossOrigin="anonymous"
+      ></script>
+
+      {/* 3. Favicon */}
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </Head>
 
      <Script id="skip-analytics" strategy="lazyOnload">

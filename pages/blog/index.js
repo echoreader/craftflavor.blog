@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllPosts } from '../../utils/mdx-utils'; // ✅ ganti dari getPaginatedPosts
+import { getAllPosts } from '../../utils/mdx-utils';
 import { getGlobalData } from '../../utils/global-data';
 
 import Layout from '../../components/Layout';
@@ -24,22 +24,32 @@ export default function BlogPage({ posts, globalData }) {
         <ul className="grid gap-8">
           {posts.map((post) => {
             const slug = post.filePath.replace(/\.mdx?$/, '');
+            const postUrl = `${siteUrl}/${slug}/`;
             return (
-              <li key={slug} className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
-                <a
-                  href={`${siteUrl}/${slug}/`}
-                  aria-label={`Read Article: ${post.data.title}`}
-                  className="block px-6 py-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                >
-                  <p className="mb-2 text-xs font-semibold uppercase text-gray-500">
-                    {post.data.date || 'Tanggal tidak tersedia'}
-                  </p>
-                  <h2 className="text-xl font-bold text-gray-900 mb-2">{post.data.title}</h2>
-                  {post.data.description && (
-                    <p className="text-gray-600 text-sm">{post.data.description}</p>
-                  )}
-                  <ArrowIcon className="mt-4 text-blue-500" />
-                </a>
+              <li key={slug} className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition px-6 py-6">
+                {/* Tanggal di luar anchor */}
+                <p className="mb-2 text-xs font-semibold uppercase text-gray-500" aria-hidden="true">
+                  {post.data.date || 'Date not available'}
+                </p>
+
+                {/* Judul sebagai anchor */}
+                <h2 className="text-xl font-bold text-gray-900 mb-2">
+                  <a
+                    href={postUrl}
+                    aria-label={`Read Article: ${post.data.title}`}
+                    className="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  >
+                    {post.data.title}
+                  </a>
+                </h2>
+
+                {/* Deskripsi di luar anchor */}
+                {post.data.description && (
+                  <p className="text-gray-600 text-sm">{post.data.description}</p>
+                )}
+
+                {/* Icon tetap di luar anchor */}
+                <ArrowIcon className="mt-4 text-blue-500" />
               </li>
             );
           })}
@@ -51,7 +61,7 @@ export default function BlogPage({ posts, globalData }) {
 }
 
 export async function getStaticProps() {
-  const posts = getAllPosts(); // ✅ ambil semua post
+  const posts = getAllPosts();
   const globalData = await getGlobalData();
   return {
     props: { posts, globalData },

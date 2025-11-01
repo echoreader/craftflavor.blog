@@ -55,7 +55,12 @@ export default function PostPage({
             data-sb-field-path="markdown_content"
           >
             <h1 className="mb-6 text-3xl md:text-5xl dark:text-white" data-sb-field-path="title">
-              {frontMatter.title}
+               <a
+                href={`${siteUrl}/${slug}/`}
+                aria-label={`Permalink to: ${frontMatter.title}`}
+                className="text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
+              {frontMatter.title}</a>
             </h1>
 
             {frontMatter.date && (
@@ -74,7 +79,7 @@ export default function PostPage({
               </p>
             )}
 
-            <MDXRemote {...source} components={components} />
+            <MDXRemote {...source} components={components} scope={{ siteUrl }} />
           </section>
 
           {/* === PREV / NEXT NAVIGATION === */}

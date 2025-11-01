@@ -35,7 +35,7 @@ export default function About({ globalData }) {
           <p>
             This blog is curated by Echo Reader — a modular content studio exploring niche storytelling across independent domains. 
             <br/>
-            <a href="https://echoreader.blog" rel="nofollow noopener" target="_blank">Echo Reader</a>.
+            Echo Reader - echoreader.blog
           </p>
 
         </section>
