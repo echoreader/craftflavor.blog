@@ -113,18 +113,16 @@ export default function PostPage({
         </section>
 
         {frontMatter.tags && frontMatter.tags.length > 0 && (
-          <div className="mt-8 text-sm text-gray-600 px-4">
-            <strong className="block mb-2">Tags:</strong>
-            <div className="flex flex-wrap gap-2">
-              {frontMatter.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-200 transition"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          <div className="mt-8 text-sm text-gray-600 px-4 flex items-center flex-wrap gap-x-3 gap-y-2">
+            <strong className="mr-2">Tags:</strong>
+            {frontMatter.tags.map((tag) => (
+              <span
+                key={tag}
+                className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs font-medium hover:bg-gray-200 transition"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         )}
 
