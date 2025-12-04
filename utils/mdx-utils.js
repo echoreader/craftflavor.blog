@@ -26,8 +26,6 @@ export const getAllPosts = () => {
   const posts = getPostFilePaths().map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
     const { content, data } = matter(source);
-
-    // Normalisasi tags
     const tags = Array.isArray(data.tags)
       ? data.tags
       : typeof data.tags === 'string'

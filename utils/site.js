@@ -1,5 +1,5 @@
-const isProd = process.env.NODE_ENV === "production"; // ← auto-detect environment
+const isProd = process.env.NODE_ENV === "production";
 
 export const siteUrl = isProd
-  ? "https://craftflavor.blog"     // ← domain production
-  : "http://localhost:3000";       // ← domain lokal
+  ? "https://craftflavor.blog"
+  : "http://localhost:3000";
