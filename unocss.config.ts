@@ -20,7 +20,12 @@ export default defineConfig({
   ],
   preflights: [
     {
-      getCSS: () => `table { 
+      getCSS: () => `
+        html {
+          overflow-y: scroll;
+        }
+      
+        table { 
           border-collapse: collapse; 
           width: 100%; 
           margin-bottom: 1rem; 
