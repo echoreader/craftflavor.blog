@@ -23,6 +23,7 @@ export default defineConfig({
       getCSS: () => `
         html {
           overflow-y: scroll;
+          overflow-x: hidden;
         }
       
         table { 
