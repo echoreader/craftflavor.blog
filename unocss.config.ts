@@ -4,7 +4,7 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetAttributify(),
-    presetTypography(), // ✅ bikin teks lebih halus
+    presetTypography(),
   ],
   shortcuts: {
     'post-card': 'bg-white text-black border-2 border-solid border-black rounded-lg p-6 shadow-sm space-y-2',

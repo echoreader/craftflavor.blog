@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
 export default function BlogPage({ posts, page, totalPages }) {
   return (
     <>
-      <h1 className="text-2xl font-bold mb-6">All Posts</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 lg:text-5xl">All Posts</h1>
       <div className="grid gap-3">
         {posts.map((post) => {
           const slug = post.filePath.replace(/\.mdx?$/, '');
