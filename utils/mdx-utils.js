@@ -67,3 +67,9 @@ export const getAllSlugs = () => {
     filePath.replace(/\.mdx?$/, '')
   );
 };
+
+export const getAllCategories = () => {
+  const posts = getAllPosts();
+  const categories = posts.map((post) => post.data.category);
+  return [...new Set(categories)];
+};

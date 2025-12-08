@@ -58,7 +58,12 @@ export default function PostPage({
         {frontMatter.category ? (
           <>
             <span aria-hidden="true"> &gt; </span>
-            <span className="text-gray-800">{frontMatter.category}</span>
+            <Link
+              href={`/category/${frontMatter.category}/`}
+              className="text-gray-800 hover:underline"
+            >
+              {frontMatter.category}
+            </Link>
             <span aria-hidden="true"> &gt; </span>
             <span className="text-gray-800 font-semibold">{frontMatter.title}</span>
           </>
