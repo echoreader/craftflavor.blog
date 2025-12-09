@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Schema from '../components/Schema';
 import { siteUrl } from "../utils/site";
 
@@ -63,12 +64,12 @@ export default function Index() {
       </div>
 
       <div className="flex justify-center mb-16">
-        <a 
+        <Link 
           href="/blog/" 
           className="px-6 py-3 border rounded font-semibold hover:bg-gray-50 transition"
         >
           Explore All Posts
-        </a>
+        </Link>
       </div>
 
     </>
