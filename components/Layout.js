@@ -11,7 +11,7 @@ export default function Layout({ children, globalData, meta, className  }) {
           description={meta?.description}
         />
         <Header name={globalData?.name} />
-        <main className="flex-grow px-4 max-w-4xl mx-auto">
+        <main className="flex-grow pt-10 px-4 max-w-4xl mx-auto">
           {children}
         </main>
         <Footer copyrightText={globalData?.footerText} />

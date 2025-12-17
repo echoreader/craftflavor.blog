@@ -131,7 +131,7 @@ export default function PostPage({
           </div>
         )}
 
-        <nav className="flex justify-between mt-12 px-4 text-sm text-blue-600" aria-label="Post navigation">
+        <nav className="flex justify-between px-4 text-sm text-blue-600" aria-label="Post navigation">
           {prevPost ? (
             <div className="flex items-center gap-1">
               <span aria-hidden="true">&laquo;</span>

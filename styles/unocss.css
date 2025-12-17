@@ -60,8 +60,6 @@
 .me{margin-inline-end:1rem;}
 .mr-2{margin-right:0.5rem;}
 .mt-10{margin-top:2.5rem;}
-.mt-12,
-[mt-12=""]{margin-top:3rem;}
 .mt-16{margin-top:4rem;}
 .mt-4{margin-top:1rem;}
 .mt-8,
@@ -75,6 +73,7 @@
 .w-6{width:1.5rem;}
 .w-full{width:100%;}
 [h1=""]{height:0.25rem;}
+[h3=""]{height:0.75rem;}
 .flex,
 [flex=""]{display:flex;}
 .flex-grow{flex-grow:1;}
@@ -132,6 +131,7 @@
 .py-3{padding-top:0.75rem;padding-bottom:0.75rem;}
 .py-4{padding-top:1rem;padding-bottom:1rem;}
 .py-8{padding-top:2rem;padding-bottom:2rem;}
+.pt-10{padding-top:2.5rem;}
 .text-center{text-align:center;}
 .prose-headings\:text-left :is(:where(h1,h2,h3,h4,h5,h6,th):not(:where([class~="not-prose"],[class~="not-prose"] *))){text-align:left;}
 .text-2xl{font-size:1.5rem;line-height:2rem;}
